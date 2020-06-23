@@ -1,0 +1,12 @@
+class  ForTest02 {
+	public static void main(String[] args) {
+		int i = 0;
+		for(;;) {
+			System.out.println("Hello"); 
+			i = i + 1;
+			if (i >= 3) {
+				break;
+			}
+		}
+ }
+}
