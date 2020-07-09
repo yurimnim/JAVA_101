@@ -1,0 +1,16 @@
+
+class Test04 {
+	//두개의 정수를 매개변수로 전달받아 나누기 하여 출력
+	public static void divide(int a, int b)  {
+		System.out.println("결과: " + (a/b));
+	}
+
+	public static void main(String[] args) {
+		try {
+			divide(4,0);	
+		}
+		catch (ArithmeticException e) {
+			System.out.println("0으로 나눌수 없습니다.");
+		}			
+	}
+}

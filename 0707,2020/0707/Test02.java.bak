@@ -1,0 +1,22 @@
+//프로그램 실행시에 두개의 정수를 전달받아 나누기한 결과를 출력하는 프로그램
+//java Test 4 2 
+// 결과 2
+
+
+class  Test01{
+	public static void main(String[] args) {
+		
+		try {
+			int a = Integer.parseInt(args[0]);
+			int b = Integer.parseInt(args[1]);
+			int re = a/b;
+			System.out.println("결과:" + re);
+		} 
+		catch (ArithmeticException e) {
+			System.out.println("입력값이 0이 될 수 없습니다.");
+		}
+		catch(Exception e){
+			System.out.println("입력값을 다시 확인하시오.");
+		} 
+  }
+}
