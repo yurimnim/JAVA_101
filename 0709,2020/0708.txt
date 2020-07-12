@@ -1,0 +1,72 @@
+<<예외처리>>
+try {
+
+} catch(예외클래스1){
+
+} catch(예외클래스2) {
+
+} finally {
+	예외가 발생되거나 정상적으로 동작하거나 반드시 실행시켜야 할 내용들을 기술합니다. 
+}
+
+<<finally>>
+예외가 발생되었다는 것은 문제가 발생되었기 떄문에 해당 catch절을 수행하고 나머지 내용은 동작하지 않는다. 
+만약 예외가 발생하거나 정상적으로 동작하거나 반드시 처리해야 할 내용이 있다면  finally에 기술한다. 
+
+<<컬랙션 프레임워크>>
+많은 양의 데이터를 처리하기 위해서 우리는 배열을 이용했었다. 
+그러나 배열은 다음의 불편한 점들이 있다. 
+
+- 배열에 담는 자료형이 모두 같아야 한다. 
+- 배열의 중간에 데이터를 추가하거나 삭제하는 것이 불편하다. 
+- 배열의 크기를 변경할 수 없다.  
+
+이러한 배열의 단점을 보완하기 위하여 자바에서는 "컬랙션 프레임워크" 를 사용한다. 
+
+<<컬렉션 프레임워크의 종류>>
+1. set	=> 자료의 중복을 허용하지 않는다. 	
+	- HashSet : 순서를 유지하지 않는다. 
+	- LinkedHashSet : 순서를 유지한다. 
+	- TreeSet: 데이터를 정렬한다. TreeSet을 쓰려면 자료형이 같아야함! 정렬하는 기준이 필요하므로..
+				*** set의 요소를 하나씩 꺼내오기 위해서는 반복자(Iterator)를 통해서 가능하다. ***
+			// Iterator
+			import java.util.HashSet;
+			import java.util.Iterator;
+
+			public class SetTest {
+				public static void main(String[] args) {
+					HashSet set = new HashSet();
+					set.add(100);
+					set.add(200);
+					set.add(300);
+					System.out.println(set);
+					
+					int sum = 0;
+					Iterator iter = set.iterator();
+					while(iter.hasNext()) {
+						int n = (Integer)iter.next();
+						sum += n;
+					}
+					System.out.println("요소의 총합은:" + sum);
+				}
+			}
+
+2. list	=> 자료의 중복허용. 
+- ArrayList : 자료의 추가 삭제가 빈번한경우 부적합.
+- LinkedList: 자료의 추가 삭제가 빈번한 경우 적합.
+
+3. map	=> key, value 가 한쌍으로 이루어진 자료구조
+	데이터에 접근하기 위해서 index 가 아닌 key에 의해서 접근하는 방식 
+		
+	 key값은 중복이 불가능. 
+	 value는 상관이 없음 
+	- HashMap	: 순서가 유지되지 않아요.
+	- LinkedHashMap	: 순서가 유지되어요.
+	- TreeMap	: key에 의해 정렬
+	
+	keySet(): Returns a Set view of the keys contained in this map.
+			
+
+
+
+
